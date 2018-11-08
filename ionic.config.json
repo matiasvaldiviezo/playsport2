@@ -1,0 +1,7 @@
+{
+  "name": "playsport2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
