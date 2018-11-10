@@ -20,12 +20,16 @@
       </ng-container>
    
       <ion-item-sliding *ngFor="let item of todos">
-        <ion-item lines="inset" button [routerLink]="['/details', item.id]">
+        <ion-item lines="inset" > <!-- button [routerLink]="['/details', item.id]" -->
           <ion-label>
             {{ item.task }}
             <p>{{ item.createdAt | date:'short' }}</p>
           </ion-label>
-          <ion-note slot="end" color="primary">{{ item.priority }}</ion-note>
+          <ion-note color="primary">{{ item.priority }}</ion-note>
+          <ion-item-option slot="end" (click)="remove(item)" color="secondary">
+            Check
+            <ion-icon name="checkmark" slot="end"></ion-icon>
+          </ion-item-option>
         </ion-item>
    
         <ion-item-options side="end">
