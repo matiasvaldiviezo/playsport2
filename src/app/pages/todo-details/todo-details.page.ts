@@ -2,7 +2,6 @@ import { Todo, TodoService } from './../../services/todo.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
-//import { HomePage } from '../../home/home.page';
 import { from } from 'rxjs';
  
 @Component({
@@ -51,14 +50,14 @@ export class TodoDetailsPage implements OnInit {
     if (this.todoId) {
       this.todoService.updateTodo(this.todo, this.todoId).then(() => {
         loading.dismiss();
-        //this.nav.goBack('home');
-        this.nav.navigateRoot('home');
+        this.nav.goBack();
+        //this.nav.navigateRoot('home');
       });
     } else {
       this.todoService.addTodo(this.todo).then(() => {
         loading.dismiss();
-        //this.nav.goBack('home');
-        this.nav.navigateRoot('home');
+        this.nav.goBack();
+        //this.nav.navigateRoot('home');
       });
     }
   }
